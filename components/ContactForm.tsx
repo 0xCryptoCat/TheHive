@@ -48,7 +48,7 @@ export function ContactForm() {
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="relative">
-          <User className="absolute left-3 top-3 w-5 h-5 text-[#fafaf8]/50" />
+          <User className="absolute left-3 top-2 w-5 h-5 text-[#fafaf8]/50" />
           <Input
             type="text"
             name="name"
@@ -61,7 +61,7 @@ export function ContactForm() {
         </div>
 
         <div className="relative">
-          <Mail className="absolute left-3 top-3 w-5 h-5 text-[#fafaf8]/50" />
+          <Mail className="absolute left-3 top-2 w-5 h-5 text-[#fafaf8]/50" />
           <Input
             type="email"
             name="email"

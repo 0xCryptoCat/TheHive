@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Gamepad2, Pickaxe, TrendingUp, Users } from "lucide-react";
 import { Button } from "./ui/button";
 import { Hexagon } from "./ui/hexagon";
+import { Toast, useToast } from "./ui/toast";
 
 export function HeroSection() {
+  const { toast, showToast, hideToast } = useToast();
+
   const floatingIcons = [
     { Icon: Gamepad2, label: "Play", color: "#fafa5e", delay: 0 },
     { Icon: Pickaxe, label: "Mine", color: "#f4ba2aff", delay: 0.2 },
@@ -73,17 +76,17 @@ export function HeroSection() {
               className="relative inline-block"
             >
               <Button
-                asChild
                 size="lg"
+                onClick={(e) => {
+                  e.preventDefault();
+                  showToast(
+                    "Coming Soon",
+                    "We're finalizing our investment portal. Join our Telegram community to stay updated and be the first to know when applications open!"
+                  );
+                }}
                 className="bg-gradient-to-r from-[#f38524] to-[#fafa5e] hover:from-[#f38524]/90 hover:to-[#fafa5e]/90 text-[#473535] font-bold px-14 py-8 text-xl rounded-full shadow-2xl transition-all duration-300 relative z-10"
               >
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdV-1F6yKITzu-gRwsvkOD5SrA_vIFS4KnN2ImHDCXjNqyJtQ/viewform?usp=dialog"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Invest in The Hive
-                </a>
+                Invest in The Hive
               </Button>
               <motion.div
                 animate={{
@@ -153,6 +156,9 @@ export function HeroSection() {
           />
         </div>
       </motion.div>
+
+      {/* Toast Notification */}
+      <Toast show={toast.show} onClose={hideToast} title={toast.title} description={toast.description} />
     </section>
   );
 }

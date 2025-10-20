@@ -2,10 +2,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
+import { Toast, useToast } from "./ui/toast";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { toast, showToast, hideToast } = useToast();
   const { scrollY } = useScroll();
   const backgroundColor = useTransform(
     scrollY,
@@ -74,17 +76,17 @@ export function Navigation() {
             ))}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                asChild
                 size="sm"
+                onClick={(e) => {
+                  e.preventDefault();
+                  showToast(
+                    "Coming Soon",
+                    "We're finalizing our investment portal. Join our Telegram community to stay updated and be the first to know when applications open!"
+                  );
+                }}
                 className="bg-gradient-to-r from-[#fafa5e] to-[#f38524] hover:from-[#fafa5e]/90 hover:to-[#f38524]/90 text-[#473535] font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
               >
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdV-1F6yKITzu-gRwsvkOD5SrA_vIFS4KnN2ImHDCXjNqyJtQ/viewform?usp=dialog"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Invest Now
-                </a>
+                Invest Now
               </Button>
             </motion.div>
           </div>
@@ -117,21 +119,25 @@ export function Navigation() {
               </a>
             ))}
             <Button
-              asChild
               size="sm"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMobileMenuOpen(false);
+                showToast(
+                  "Coming Soon",
+                  "We're finalizing our investment portal. Join our Telegram community to stay updated and be the first to know when applications open!"
+                );
+              }}
               className="w-full bg-[#fafa5e] hover:bg-[#fafa5e]/90 text-[#473535] rounded-full"
             >
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdV-1F6yKITzu-gRwsvkOD5SrA_vIFS4KnN2ImHDCXjNqyJtQ/viewform?usp=dialog"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Invest Now
-              </a>
+              Invest Now
             </Button>
           </motion.div>
         )}
       </div>
+
+      {/* Toast Notification */}
+      <Toast show={toast.show} onClose={hideToast} title={toast.title} description={toast.description} />
     </motion.nav>
   );
 }

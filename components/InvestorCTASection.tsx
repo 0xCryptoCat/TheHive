@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import { Toast, useToast } from "./ui/toast";
 
 export function InvestorCTASection() {
+  const { toast, showToast, hideToast } = useToast();
+
   return (
     <section className="py-20 md:py-32 bg-gradient-to-br from-[#473535] via-[#f38524] to-[#fafa5e] relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
@@ -80,19 +83,18 @@ export function InvestorCTASection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button
-                  asChild
                   size="lg"
-                  className="bg-gradient-to-r from-[#fafa5e] to-[#f38524] hover:from-[#fafa5e]/90 hover:to-[#f38524]/90 text-[#473535] font-bold px-16 py-8 text-xl md:text-2xl rounded-full group shadow-2xl"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    showToast(
+                      "Coming Soon",
+                      "We're finalizing our investment portal. Join our Telegram community to stay updated and be the first to know when applications open!"
+                    );
+                  }}
+                  className="bg-gradient-to-r from-[#fafa5e] to-[#f38524] hover:from-[#fafa5e]/90 hover:to-[#f38524]/90 text-[#473535] font-bold px-16 py-8 text-xl md:text-2xl rounded-full group shadow-2xl flex items-center gap-3"
                 >
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSdV-1F6yKITzu-gRwsvkOD5SrA_vIFS4KnN2ImHDCXjNqyJtQ/viewform?usp=dialog"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3"
-                  >
-                    Be an Early Investor
-                    <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
-                  </a>
+                  Be an Early Investor
+                  <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
                 </Button>
               </motion.div>
             </motion.div>
@@ -127,6 +129,9 @@ export function InvestorCTASection() {
           ))}
         </div>
       </div>
+
+      {/* Toast Notification */}
+      <Toast show={toast.show} onClose={hideToast} title={toast.title} description={toast.description} />
     </section>
   );
 }
