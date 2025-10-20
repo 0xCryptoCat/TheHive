@@ -65,7 +65,7 @@ export function TokenomicsSection() {
             transition={{ duration: 0.8 }}
             className="relative aspect-square max-w-md mx-auto"
           >
-            <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
+            <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90" preserveAspectRatio="xMidYMid meet">
               {(() => {
                 let currentAngle = 0;
                 return distribution.map((item, index) => {

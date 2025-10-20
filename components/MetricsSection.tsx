@@ -105,8 +105,8 @@ export function MetricsSection() {
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center">
               Average Revenue Per User
             </h3>
-            <div className="relative h-64 md:h-80">
-              <svg className="w-full h-full" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet">
+            <div className="relative h-64 md:h-80 w-full overflow-x-auto">
+              <svg className="w-full h-full min-w-[600px] md:min-w-0" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet">
                 {/* Grid lines */}
                 {[55.0, 57.5, 60.0, 62.5, 65.0, 67.5, 70.0].map((value, i) => (
                   <line

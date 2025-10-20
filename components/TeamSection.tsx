@@ -37,7 +37,7 @@ export function TeamSection() {
       role: "Lead Developer",
       description: "Full-stack fur-ball building Honey Inc.",
       color: "#f38524",
-      image: "public/dev.jpeg",
+      image: "/dev.jpeg",
     },
     {
       name: "LuhLuh",

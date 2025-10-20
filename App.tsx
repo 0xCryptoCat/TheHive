@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { LoadingAnimation } from "./components/LoadingAnimation";
 import { Navigation } from "./components/Navigation";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -17,8 +18,23 @@ import { RoadmapSection } from "./components/RoadmapSection";
 import { TeamSection } from "./components/TeamSection";
 import { InvestorCTASection } from "./components/InvestorCTASection";
 import { Footer } from "./components/Footer";
+import { PreviewImage } from "./components/PreviewImage";
 
 export default function App() {
+  const [showPreview, setShowPreview] = useState(false);
+
+  useEffect(() => {
+    // Check if URL has ?preview=true
+    if (typeof window !== 'undefined' && window.location.search.includes('preview=true')) {
+      setShowPreview(true);
+    }
+  }, []);
+
+  // Show preview image if URL has ?preview=true
+  if (showPreview) {
+    return <PreviewImage />;
+  }
+
   return (
     <div className="size-full">
       <SvgFilters />
