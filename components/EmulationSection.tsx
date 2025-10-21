@@ -35,7 +35,7 @@ export function EmulationSection() {
             Play Everything, Everywhere.
           </motion.h2>
           <p className="text-lg md:text-xl text-[#fafaf8]/90 max-w-4xl mx-auto leading-relaxed">
-            Our Cluster Emulation Licensing initiative unlocks access to thousands of iconic games — from <span className="text-[#fafa5e] font-semibold">Mario</span> and <span className="text-[#f38524] font-semibold">Sonic</span> to <span className="text-[#fafa5e] font-semibold">Zelda</span> and <span className="text-[#f38524] font-semibold">Bomberman</span> — all monetized ethically through ad rewards and data insights.
+            Our Cluster Emulation Licensing initiative unlocks access to thousands of iconic games — from <span className="text-[#fafa5e] font-semibold">Retro Hits</span> and <span className="text-[#f38524] font-semibold">Arcade Classics</span> to <span className="text-[#fafa5e] font-semibold">8-Bit Legends</span> and <span className="text-[#f38524] font-semibold">Console Games</span> — all monetized ethically through ad rewards and data insights.
           </p>
         </motion.div>
 
@@ -64,8 +64,8 @@ export function EmulationSection() {
           whileHover={{ scale: 1.05 }}
           className="text-center p-10 md:p-12 rounded-3xl bg-white/10 backdrop-blur-md border border-[#fafa5e]/40 hover:border-[#fafa5e]/60 shadow-2xl hover:shadow-[#fafa5e]/30 max-w-md mx-auto transition-all duration-300"
         >
-          <p className="text-5xl md:text-6xl font-bold text-[#fafa5e] mb-3">16,000+ Titles</p>
-          <p className="text-[#fafaf8]/90 text-lg">Accessible on all devices</p>
+            <p className="text-5xl md:text-6xl font-bold text-[#fafa5e] mb-3">Over 16K</p>
+            <p className="text-[#fafaf8]/90 text-lg">Games you know and love</p>
         </motion.div>
       </div>
     </section>

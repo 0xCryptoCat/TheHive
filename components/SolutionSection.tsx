@@ -16,7 +16,7 @@ export function SolutionSection() {
     {
       icon: Zap,
       title: "Low-Cost Mining",
-      description: "Leverage natural gas for nearly-free energy.",
+      description: "Leverage natural gas waste for low energy outputs.",
     },
     {
       icon: Network,

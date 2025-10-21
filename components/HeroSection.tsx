@@ -110,7 +110,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              Be part of the next evolution in GameFi and green crypto mining.
+              Be part of the next evolution in GameFi and renewable crypto mining.
             </motion.p>
           </motion.div>
         </motion.div>

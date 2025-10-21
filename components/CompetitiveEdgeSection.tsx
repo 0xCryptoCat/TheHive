@@ -3,10 +3,10 @@ import { Check, X } from "lucide-react";
 
 export function CompetitiveEdgeSection() {
   const competitors = [
-    { name: "Axie Infinity", focus: "Gaming Only" },
+    { name: "Axie Infinity", focus: "No community benefit" },
     { name: "Gala Games", focus: "Limited Ecosystem" },
     { name: "HashAI", focus: "Mining Focus" },
-    { name: "NotCoin", focus: "Ad-Centric" },
+    { name: "NotCoin", focus: "Poor monetization" },
     { name: "Kelp", focus: "Single Platform" }
   ];
 

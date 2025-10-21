@@ -152,18 +152,6 @@ export function TokenomicsSection() {
               Launched on <span className="text-[#fafa5e] font-semibold">Ethereum</span> due to outstanding metrics, unless a grant is awarded.
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 1, duration: 0.5 }}
-            className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-[#fafa5e]/30 hover:border-[#fafa5e]/60 hover:bg-white/15 transition-all duration-300 space-y-3"
-          >
-            <p className="text-[#fafaf8]/90 text-base md:text-lg">
-              Angel/Private Round participants will have opportunities to exit as Phase 2 is initiated. Returns for the Angel Round are projected between 2x and 10x, depending on the timing of entry and the company's valuation. While the app is live, USDT will be distributed at a 40% revenue share rate until launch. Post-launch, this will decrease to 10% and reach 0% after 2 months.
-            </p>
-          </motion.div>
         </motion.div>
       </div>
     </section>
